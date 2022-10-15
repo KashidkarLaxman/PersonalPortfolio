@@ -172,7 +172,7 @@ const activity = [
         type: 'comment',
         person: {name: 'Incentius', href: '#'},
         imageUrl:
-            './profile.jpeg',
+            './profile.png',
         comment:
             ['Collaborated with project managers to select ambitious, but realistic coding milestones on pre-release software project development.',
                 'Discussed issues with team members to provide resolution and apply best practices.',
@@ -187,7 +187,7 @@ const activity = [
         type: 'comment',
         person: {name: 'Ticron Technology', href: '#'},
         imageUrl:
-            './profile.jpeg',
+            './profile.png',
         comment:
             ['Collaborated with software engineers to develop and test application procedures for system efficiency.',
 'Provided software and hardware troubleshooting to maintain performance levels.',
@@ -460,7 +460,7 @@ export default function Example() {
                   <div className="aspect-w-10 aspect-h-9 lg:aspect-w-10 lg:aspect-h-7 overflow-hidden rounded-xl shadow-xl  lg:aspect-none lg:h-full">
                     <img
                       className="object-cover lg:h-full lg:w-full"
-                      src="./profile.jpeg"
+                      src="./profile.png"
                       alt=""
                     />
         {/* <ReactPlayer url='./introvideo.mp4'*/}
