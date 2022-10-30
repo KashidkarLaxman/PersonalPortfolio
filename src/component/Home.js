@@ -3,6 +3,7 @@ import {Popover, Transition} from '@headlessui/react'
 import {
     CloudUploadIcon,
     CogIcon,
+    DatabaseIcon,
     LockClosedIcon,
     MenuIcon,
     RefreshIcon,
@@ -23,35 +24,35 @@ const navigation = [
 ]
 const features = [
     {
-        name: 'MTA in DB Fundamentals',
-        description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi vitae lobortis.',
-        icon: CloudUploadIcon,
+        name: 'SQL & NoSql',
+        description: 'Well versed with SQL and Nosql databases like MongoDb, SQL, Postgres, Mysql, Redis',
+        imageUrl: '/database.png',
     },
     {
         name: 'Machine Learning',
-        description: 'Qui aut temporibus nesciunt vitae dicta repellat sit dolores pariatur. Temporibus qui illum aut.',
-        icon: LockClosedIcon,
+        description: 'Certified in Machinelearning from Stanford University(Coursera), Basic Alogorithms like Regression, classification ',
+        imageUrl: '/creativity.png',
     },
     {
-        name: 'Vue',
-        description: 'Rerum quas incidunt deleniti quaerat suscipit mollitia. Amet repellendus ut odit dolores qui.',
-        icon: RefreshIcon,
+        name: 'VueJs',
+        description: 'Lifecycle Methods, Components, Quasar Framework, Vuex, Axios, Web and Hybrid mobile app Development',
+        imageUrl: '/vuejs.png',
     },
     {
-        name: 'React',
-        description: 'Ullam laboriosam est voluptatem maxime ut mollitia commodi. Et dignissimos suscipit perspiciatis.',
-        icon: ShieldCheckIcon,
+        name: 'ReactJs',
+        description: 'React Hooks, Redux, React DOM, Components, Webapp development',
+        imageUrl: '/react.png',
     },
     {
-        name: 'RestFull API',
+        name: 'Python',
         description:
-            'Ab a facere voluptatem in quia corrupti veritatis aliquam. Veritatis labore quaerat ipsum quaerat id.',
-        icon: CogIcon,
+            'Flask, Django, Django Rest Framework(DRF), OOPs, Crawling, REST API, Pandas.',
+        imageUrl: '/python.png',
     },
     {
         name: 'Java',
-        description: 'Quia qui et est officia cupiditate qui consectetur. Ratione similique et impedit ea ipsum et.',
-        icon: ServerIcon,
+        description: 'Core Java, OOps, Basic understanding of advance java',
+        imageUrl: '/java.png',
     },
 ]
 let blogPosts = []
@@ -391,9 +392,9 @@ export default function Example() {
                                             <div className="rounded-md shadow">
                                                 <a
                                                     href="!#"
-                                                    className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10"
+                                                    className="w-full flex items-center justify-center px-5 py-2 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10"
                                                 >
-                                                    Hire Me
+                                                    Download CV
                                                 </a>
                                             </div>
                                             <div className="mt-3 sm:mt-0 sm:ml-3">
@@ -422,7 +423,7 @@ export default function Example() {
                     </div>
 
                     {/* Feature section with screenshot */}
-                    <div className="relative bg-gray-50 pt-16 sm:pt-24 lg:pt-32">
+                    <div className="relative bg-gray-50 py-16 sm:py-24 lg:py-24">
                         <div className="mx-auto max-w-md px-4 text-center sm:px-6 sm:max-w-3xl lg:px-8 lg:max-w-7xl">
                             <div>
                                 <h2 className="text-base font-semibold tracking-wider text-cyan-600 uppercase">About
@@ -456,7 +457,7 @@ export default function Example() {
                             {/*</div>*/}
                             <div className="relative lg:-my-8">
                 {/*<div aria-hidden="true" className="absolute inset-x-0 top-0 h-1/2 bg-white lg:hidden" />*/}
-                <div className="mx-auto max-w-md  sm:max-w-3xl sm:px-6 lg:h-full lg:p-0">
+                <div className="mx-auto max-w-md  sm:max-w-3xl sm:px-6 lg:h-full lg:p-0 ">
                   <div className="aspect-w-10 aspect-h-9 lg:aspect-w-10 lg:aspect-h-7 overflow-hidden rounded-xl shadow-xl  lg:aspect-none lg:h-full">
                     <img
                       className="object-cover lg:h-full lg:w-full"
@@ -527,7 +528,7 @@ export default function Example() {
                                 Everything you need to deploy your app
                             </p>
                             <p className="mt-5 max-w-prose mx-auto text-xl text-gray-500">
-                                Experienced Full Stack developer with nearly 3 years of experience in Python (Flask, Django) and Javascript(VueJS, ReactJS). Excellent in resolving problems and improving customer satisfaction.
+                                Experienced Full Stack developer with nearly 3 years of experience in Python (Flask, Django), Javascript(VueJS, ReactJS) and Database(Mongodb, SQL). Excellent in resolving problems and improving customer satisfaction.
                             </p>
                             <div className="mt-12">
                                 <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -538,7 +539,12 @@ export default function Example() {
                                                     <div>
                             <span
                                 className="inline-flex items-center justify-center p-3 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-md shadow-lg">
-                              <feature.icon className="h-6 w-6 text-white" aria-hidden="true"/>
+                              {/* <feature.icon className="h-6 w-6 text-white" aria-hidden="true"/> */}
+                              <img
+                                                                        className="h-8 w-8  flex items-center justify-center "
+                                                                        src={feature.imageUrl}
+                                                                        alt=""
+                                                                    />
                             </span>
                                                     </div>
                                                     <h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight">{feature.name}</h3>
