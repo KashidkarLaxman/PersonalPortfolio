@@ -176,20 +176,21 @@ export default function Example() {
                                 <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                                     <div className="rounded-md shadow">
                                         <a
-                                            href="!#"
+                                           href="./laxman_kashidkar_resume.pdf"
                                             className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10"
                                         >
-                                            Hire Me
+                                            Download CV
                                         </a>
                                     </div>
-                                    <div className="mt-3 sm:mt-0 sm:ml-3">
+                                    {/* <div className="mt-3 sm:mt-0 sm:ml-3">
+
                                         <a
                                             href="!#"
-                                            className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10"
+                                            className=" w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10"
                                         >
                                             Contact Me
                                         </a>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                         </main>
@@ -199,7 +200,7 @@ export default function Example() {
                 <div className="lg:absolute bg-gray-400 lg:inset-y-0 lg:right-0 lg:w-1/2">
                     <img
                         className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
-                        src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80"
+                        src="./profile.png"
                         alt=""
                     />
                 </div>
@@ -213,66 +214,12 @@ export default function Example() {
                             About me
                         </p>
                         <p className="max-w-xl mt-5 mx-auto text-xl text-gray-500">
-                            Start building for free, then add a site plan to go live. Account plans unlock additional
-                            features.
+                            Who i am?
                         </p>
                     </div>
                 </div>
             </div>
-            {/*WHO I AM*/}
-            <div className="bg-white">
-                <div className="pb-16 bg-indigo-600 lg:pb-0 lg:z-10 lg:relative">
-                    <div className="lg:mx-auto lg:max-w-7xl   lg:px-8 lg:grid lg:grid-cols-3 lg:gap-8">
-                        <div className="relative lg:-my-8">
-                            <div aria-hidden="true" className="absolute inset-x-0 top-0 h-1/2 bg-white lg:hidden"/>
-                            <div className="mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:p-0 lg:h-full">
-                                <div
-                                    className="aspect-w-10 aspect-h-6 rounded-xl shadow-xl overflow-hidden sm:aspect-w-16 sm:aspect-h-7 lg:aspect-none lg:h-full">
-                                    <img
-                                        className="object-cover lg:h-full lg:w-full"
-                                        src="./profile.jpeg"
-                                        alt=""
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="mt-12 lg:m-0 lg:col-span-2 lg:pl-8">
-                            <div className="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 lg:px-0 lg:py-20 lg:max-w-none">
-                                <blockquote>
-                                    <div>
-                                        <div className="relative flex justify-center">
-                                            <span
-                                                className="px-2  text-sm text-white text-2xl font-extrabold">Who i am</span>
-                                        </div>
-                                        <svg
-                                            className="h-12 w-12 text-white opacity-25"
-                                            fill="currentColor"
-                                            viewBox="0 0 32 32"
-                                            aria-hidden="true"
-                                        >
-                                            <path
-                                                d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z"/>
-                                        </svg>
 
-                                        <p className="mt-6 text-2xl font-medium text-white">
-                                            Software Developer talented at translating customer requirements into
-                                            testable engineering plans. Maintains exceptional development quality from
-                                            conception through distribution. Willing to direct large-scale teams or work
-                                            hands-on to complete extremely difficult projects. Brings both cutting-edge
-                                            programming expertise and exceptional interpersonal skills to leadership
-                                            roles.
-                                        </p>
-                                    </div>
-                                    <footer className="mt-6">
-                                        <p className="text-base font-medium text-white">Laxman Kashidkar</p>
-                                        <p className="text-base font-medium text-indigo-100">Solutions developer</p>
-                                    </footer>
-                                </blockquote>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </>
     )
 }
