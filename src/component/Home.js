@@ -176,6 +176,20 @@ const activity = [
     {
         id: 1,
         type: 'comment',
+        person: {name: 'Full Stack  Developer,  Zinrelo', href: '#'},
+        imageUrl:
+            './profile.png',
+        comment:
+            ['Led the development of key product features related to timezones, improving the platforms usability and global accessibility. Mentored team members through one-on-one sessions, sharing  best practices to enhance the teams skillset',
+            'Actively contributed to code reviews, unit tests, ensuring code quality and adherence to coding standards.',
+            'Participated in Agile development processes, including design doc discussions, daily stand-ups, and retrospectives, to ensure efficient project execution.'
+            ],
+        date: '21-Dec-2020 - 31-Oct-2023',
+
+    },
+    {
+        id: 2,
+        type: 'comment',
         person: {name: 'Solutions Devloper - Incentius', href: '#'},
         imageUrl:
             './profile.png',
@@ -185,21 +199,19 @@ const activity = [
                 'Developed clear specifications for project plans using customer requirements.',
                 'Documented technical workflows and knowledge to educate newly hired employees.',
                 'Designed reusable and reliable code for use within distributed cloud environments.'],
-        date: '16-Jun-2020 - Present',
+        date: '16-Jun-2020 - 16-Dec-2022',
 
     },
     {
-        id: 2,
+        id: 3,
         type: 'comment',
-        person: {name: 'Software Engineer Intern - Ticron Technologies', href: '#'},
+        person: {name: 'DSA and Full-Stack Mentor -10x Academy(Part-time-extra-curricular)', href: '#'},
         imageUrl:
             './profile.png',
         comment:
-            ['Collaborated with software engineers to develop and test application procedures for system efficiency.',
-'Provided software and hardware troubleshooting to maintain performance levels.',
-'Wrote clear, clean code for various projects.'
+            ['Mentoring students on DSA and full stack development . Giving some assignments and explaining different approaches to solve problems. Taking 1 to 1 mentor session.'
 ],
-        date: '01-Jan-2020 - 15-Jun-2020',
+        date: '01-Sep-2022 - 15-Jan-2023',
     },
 ]
 function classNames(...classes) {
@@ -253,10 +265,10 @@ export default function Example() {
     return (
         <div className="bg-white scroll-smooth ">
             <div className="relative overflow-hidden">
-            <div className="relative bg-gray-400 overflow-hidden" ref={header}>
-                <div className="max-w-7xl mx-auto bg-gray-400 ">
+            <div className="relative bg-white overflow-hidden" ref={header}>
+                <div className="max-w-9xl mx-auto bg-white ">
                     <div
-                        className="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
+                        className="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 xl:max-w-4xl  lg:max-w-2xl lg:w-full lg:pb-28 ">
 
                         <svg
                             className="hidden lg:block absolute right-0 inset-y-0 h-full w-48 text-white transform translate-x-1/2"
@@ -391,7 +403,7 @@ export default function Example() {
                         </Popover>
 
                         <main
-                            className="mt-10 mx-auto max-w-7xl px-4  sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+                            className="mt-10 mx-auto max-w-9xl px-4  sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
 
 
                             <div className="sm:text-center lg:text-left z-1" >
@@ -773,7 +785,7 @@ export default function Example() {
 
                                     <div key={pos.link} className="flex flex-col rounded-lg shadow-lg overflow-hidden">
                                         <div className="flex-shrink-0">
-                                            <img className="h-48 w-full object-cover" src={pos.thumbnail} alt=""/>
+                                            <img className="h-48 w-full object-cover" src="https://media.istockphoto.com/id/1449171015/photo/no-face-picture-of-software-engineer-hands-typing-and-composing-app-script-in-front-of-pc.jpg?s=612x612&w=0&k=20&c=zkOe6Fqvx26j5juDOzbUUCZ3HHgQlWojPrrTHMmubV4=" alt="dd"/>
                                         </div>
                                         <div className="flex-1 bg-white p-6 flex flex-col justify-between">
                                             <div className="flex-1">

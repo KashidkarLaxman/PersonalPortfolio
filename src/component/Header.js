@@ -29,8 +29,8 @@ const features = [
 export default function Example() {
     return (
         <>
-            <div className="relative bg-gray-400 overflow-hidden">
-                <div className="max-w-7xl mx-auto bg-gray-400 ">
+            <div className="relative bg-white overflow-hidden">
+                <div className="max-w-9xl mx-auto bg-gray-400 ">
                     <div
                         className="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
 
