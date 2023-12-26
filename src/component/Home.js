@@ -1,31 +1,14 @@
-import {Fragment, useState} from 'react'
+import {Fragment} from 'react'
 import {Popover, Transition} from '@headlessui/react'
 import {
-    CloudUploadIcon,
-    CogIcon,
-    DatabaseIcon,
-    LockClosedIcon,
     MenuIcon,
-    RefreshIcon,
-    ServerIcon,
-    ShieldCheckIcon,
     XIcon,
 } from '@heroicons/react/outline'
-import {ChevronRightIcon, ExternalLinkIcon} from '@heroicons/react/solid'
 import ReactTypingEffect from "react-typing-effect";
-import {ChatAltIcon, TagIcon, UserCircleIcon} from '@heroicons/react/solid'
-import ReactPlayer from 'react-player'
+import {TagIcon, UserCircleIcon} from '@heroicons/react/solid'
 import {  useEffect, useRef} from 'react'
 import React from "react";
 import axios from "axios";
-import Header from "./Header"
-const navigation = [
-    {name: 'Home', href: '#', refkey:'header'},
-    {name: 'About', href: '#', refkey:'about'},
-    {name: 'Skills', href: '#', refkey:'skills'},
-    {name: 'Experience', href: '#', refkey:'experience'},
-    {name: 'Blogs', href: '#', refkey:'blogs'}
-]
 const features = [
     {
         name: 'SQL & NoSql',
@@ -60,26 +43,6 @@ const features = [
     },
 ]
 let blogPosts = []
-let kk =    [ {
-        id: 3,
-        title: 'Improve your customer experience',
-        href: '#',
-        date: 'Feb 12, 2020',
-        datetime: '2020-02-12',
-        category: {name: 'Case Study', href: '#'},
-        imageUrl:
-            'https://images.unsplash.com/photo-1492724441997-5dc865305da7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
-        preview:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
-        author: {
-            name: 'Daniela Metz',
-            imageUrl:
-                'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-            href: '#',
-        },
-        readingLength: '11 min',
-    }]
-let  datas = []
 const footerNavigation = {
     solutions: [
         {name: 'Marketing', href: '#'},
