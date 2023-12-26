@@ -1,12 +1,12 @@
-import {Fragment} from 'react'
-import {Popover, Transition} from '@headlessui/react'
+import { Fragment } from 'react'
+import { Popover, Transition } from '@headlessui/react'
 import {
     MenuIcon,
     XIcon,
 } from '@heroicons/react/outline'
 import ReactTypingEffect from "react-typing-effect";
-import {TagIcon, UserCircleIcon} from '@heroicons/react/solid'
-import {  useEffect, useRef} from 'react'
+import { TagIcon, UserCircleIcon } from '@heroicons/react/solid'
+import { useEffect, useRef } from 'react'
 import React from "react";
 import axios from "axios";
 const features = [
@@ -45,28 +45,28 @@ const features = [
 let blogPosts = []
 const footerNavigation = {
     solutions: [
-        {name: 'Marketing', href: '#'},
-        {name: 'Analytics', href: '#'},
-        {name: 'Commerce', href: '#'},
-        {name: 'Insights', href: '#'},
+        { name: 'Marketing', href: '#' },
+        { name: 'Analytics', href: '#' },
+        { name: 'Commerce', href: '#' },
+        { name: 'Insights', href: '#' },
     ],
     support: [
-        {name: 'Pricing', href: '#'},
-        {name: 'Documentation', href: '#'},
-        {name: 'Guides', href: '#'},
-        {name: 'API Status', href: '#'},
+        { name: 'Pricing', href: '#' },
+        { name: 'Documentation', href: '#' },
+        { name: 'Guides', href: '#' },
+        { name: 'API Status', href: '#' },
     ],
     company: [
-        {name: 'About', href: '#'},
-        {name: 'Blog', href: '#'},
-        {name: 'Jobs', href: '#'},
-        {name: 'Press', href: '#'},
-        {name: 'Partners', href: '#'},
+        { name: 'About', href: '#' },
+        { name: 'Blog', href: '#' },
+        { name: 'Jobs', href: '#' },
+        { name: 'Press', href: '#' },
+        { name: 'Partners', href: '#' },
     ],
     legal: [
-        {name: 'Claim', href: '#'},
-        {name: 'Privacy', href: '#'},
-        {name: 'Terms', href: '#'},
+        { name: 'Claim', href: '#' },
+        { name: 'Privacy', href: '#' },
+        { name: 'Terms', href: '#' },
     ],
     social: [
         {
@@ -74,13 +74,13 @@ const footerNavigation = {
             href: 'https://www.linkedin.com/in/laxmankashidkar/',
             icon: (props) => (
                 <svg {...props}
-                className="w-6 h-6 text-grey-2 fill-current"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 448 512">
-                <path
-                  d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"
-                ></path>
-              </svg>
+                    className="w-6 h-6 text-grey-2 fill-current"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 448 512">
+                    <path
+                        d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"
+                    ></path>
+                </svg>
             ),
         },
         {
@@ -102,7 +102,7 @@ const footerNavigation = {
             icon: (props) => (
                 <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
                     <path
-                        d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/>
+                        d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
                 </svg>
             ),
         },
@@ -125,11 +125,11 @@ const footerNavigation = {
             icon: (props) => (
                 <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
                     <path
-                        d="M86,17.2c-37.9948,0 -68.8,30.8052 -68.8,68.8c0,37.9948 30.8052,68.8 68.8,68.8c37.9948,0 68.8,-30.8052 68.8,-68.8c0,-37.9948 -30.8052,-68.8 -68.8,-68.8zM60.17707,48.1772c4.82747,0 8.04387,3.2164 8.04387,7.50493c0,4.28853 -3.2164,7.50493 -8.57707,7.50493c-4.82747,0.00573 -8.04387,-3.2164 -8.04387,-7.50493c0,-4.28853 3.2164,-7.50493 8.57707,-7.50493zM68.8,114.66667h-17.2v-45.86667h17.2zM126.13333,114.66667h-16.19093v-25.06613c0,-6.9316 -4.3172,-8.5312 -5.934,-8.5312c-1.6168,0 -7.0176,1.0664 -7.0176,8.5312c0,1.0664 0,25.06613 0,25.06613h-16.72413v-45.86667h16.72987v6.3984c2.15573,-3.7324 6.47293,-6.3984 14.5684,-6.3984c8.09547,0 14.5684,6.3984 14.5684,20.80053z"/>
+                        d="M86,17.2c-37.9948,0 -68.8,30.8052 -68.8,68.8c0,37.9948 30.8052,68.8 68.8,68.8c37.9948,0 68.8,-30.8052 68.8,-68.8c0,-37.9948 -30.8052,-68.8 -68.8,-68.8zM60.17707,48.1772c4.82747,0 8.04387,3.2164 8.04387,7.50493c0,4.28853 -3.2164,7.50493 -8.57707,7.50493c-4.82747,0.00573 -8.04387,-3.2164 -8.04387,-7.50493c0,-4.28853 3.2164,-7.50493 8.57707,-7.50493zM68.8,114.66667h-17.2v-45.86667h17.2zM126.13333,114.66667h-16.19093v-25.06613c0,-6.9316 -4.3172,-8.5312 -5.934,-8.5312c-1.6168,0 -7.0176,1.0664 -7.0176,8.5312c0,1.0664 0,25.06613 0,25.06613h-16.72413v-45.86667h16.72987v6.3984c2.15573,-3.7324 6.47293,-6.3984 14.5684,-6.3984c8.09547,0 14.5684,6.3984 14.5684,20.80053z" />
 
                 </svg>
-               
-                    
+
+
             ),
         },
     ],
@@ -139,13 +139,13 @@ const activity = [
     {
         id: 1,
         type: 'comment',
-        person: {name: 'Full Stack  Developer,  Zinrelo', href: '#'},
+        person: { name: 'Full Stack  Developer,  Zinrelo', href: '#' },
         imageUrl:
             './profile.png',
         comment:
             ['Led the development of key product features related to timezones, improving the platforms usability and global accessibility. Mentored team members through one-on-one sessions, sharing  best practices to enhance the teams skillset',
-            'Actively contributed to code reviews, unit tests, ensuring code quality and adherence to coding standards.',
-            'Participated in Agile development processes, including design doc discussions, daily stand-ups, and retrospectives, to ensure efficient project execution.'
+                'Actively contributed to code reviews, unit tests, ensuring code quality and adherence to coding standards.',
+                'Participated in Agile development processes, including design doc discussions, daily stand-ups, and retrospectives, to ensure efficient project execution.'
             ],
         date: '21-Dec-2020 - 31-Oct-2023',
 
@@ -153,7 +153,7 @@ const activity = [
     {
         id: 2,
         type: 'comment',
-        person: {name: 'Solutions Devloper - Incentius', href: '#'},
+        person: { name: 'Solutions Devloper - Incentius', href: '#' },
         imageUrl:
             './profile.png',
         comment:
@@ -168,12 +168,12 @@ const activity = [
     {
         id: 3,
         type: 'comment',
-        person: {name: 'DSA and Full-Stack Mentor -10x Academy(Part-time-extra-curricular)', href: '#'},
+        person: { name: 'DSA and Full-Stack Mentor -10x Academy(Part-time-extra-curricular)', href: '#' },
         imageUrl:
             './profile.png',
         comment:
             ['Mentoring students on DSA and full stack development . Giving some assignments and explaining different approaches to solve problems. Taking 1 to 1 mentor session.'
-],
+            ],
         date: '01-Sep-2022 - 15-Jan-2023',
     },
 ]
@@ -182,34 +182,34 @@ function classNames(...classes) {
 }
 
 export default function Example() {
-     const [post, setPost] = React.useState([]);
-     const [avatar, setAvatar] = React.useState('');
-     const header = useRef(null);
-     const about = useRef(null);
-     const skills = useRef(null);
-     const experience = useRef(null);
-     const blogs = useRef(null); 
-     const scrollToSection = (elementRef) => {
+    const [post, setPost] = React.useState([]);
+    const [avatar, setAvatar] = React.useState('');
+    const header = useRef(null);
+    const about = useRef(null);
+    const skills = useRef(null);
+    const experience = useRef(null);
+    const blogs = useRef(null);
+    const scrollToSection = (elementRef) => {
         window.scrollTo({
             top: elementRef.current.offsetTop,
             behavior: "smooth"
         });
-     };
+    };
     useEffect(() => {
         axios.get('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@laxmankashidkar').then(res => {
             setPost(res.data['items'])
             setAvatar(res.data.feed.image)
             res.data['items'].forEach((item, i) => {
-          // item["avatar"] = this.state.avatar; // push avatar inside the json
-          // item["profilelink"] = this.state.profileLink; // push profile link inside the JSON
-          // const row = Math.floor(i / 3);
+                // item["avatar"] = this.state.avatar; // push avatar inside the json
+                // item["profilelink"] = this.state.profileLink; // push profile link inside the JSON
+                // const row = Math.floor(i / 3);
                 blogPosts.push({
                     id: 1,
                     title: item['title'],
                     href: item['link'],
                     date: item['pub_date'],
                     datetime: item['pub_date'],
-                    category: {name: item['categories'], href: '#'},
+                    category: { name: item['categories'], href: '#' },
                     imageUrl: item['thumbnail'],
                     preview: item['description'],
                     author: {
@@ -228,109 +228,109 @@ export default function Example() {
     return (
         <div className="bg-white scroll-smooth ">
             <div className="relative overflow-hidden">
-            <div className="relative bg-white overflow-hidden" ref={header}>
-                <div className="max-w-9xl mx-auto bg-white ">
-                    <div
-                        className="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 xl:max-w-4xl  lg:max-w-2xl lg:w-full lg:pb-28 ">
+                <div className="relative bg-white overflow-hidden" ref={header}>
+                    <div className="max-w-9xl mx-auto bg-white ">
+                        <div
+                            className="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 xl:max-w-4xl  lg:max-w-2xl lg:w-full lg:pb-28 ">
 
-                        <svg
-                            className="hidden lg:block absolute right-0 inset-y-0 h-full w-48 text-white transform translate-x-1/2"
-                            fill="currentColor"
-                            viewBox="0 0 100 100"
-                            preserveAspectRatio="none"
-                            aria-hidden="true"
-                        >
-                            <polygon points="50,0 100,0 50,100 0,100"/>
-                        </svg>
+                            <svg
+                                className="hidden lg:block absolute right-0 inset-y-0 h-full w-48 text-white transform translate-x-1/2"
+                                fill="currentColor"
+                                viewBox="0 0 100 100"
+                                preserveAspectRatio="none"
+                                aria-hidden="true"
+                            >
+                                <polygon points="50,0 100,0 50,100 0,100" />
+                            </svg>
 
-                        <Popover>
-                            <div className="relative pt-6 px-4 sm:px-6 lg:px-8">
-                                <nav className="relative flex items-center justify-between sm:h-10 lg:justify-start"
-                                     aria-label="Global">
-                                    <div className="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
-                                        <div className="flex items-center justify-between w-full md:w-auto">
-                                            <a href="!#">
-                                                <span className="sr-only">Workflow</span>
-                                                <img
-                                                    alt="Workflow"
-                                                    className="h-8 w-auto sm:h-10"
-                                                    src="./profile-removebg-preview.png"
-                                                />
-                                            </a>
-                                            <div className="-mr-2 flex items-center md:hidden">
-                                                <Popover.Button
-                                                    className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-                                                    <span className="sr-only">Open main menu</span>
-                                                    <MenuIcon className="h-6 w-6" aria-hidden="true"/>
-                                                </Popover.Button>
+                            <Popover>
+                                <div className="relative pt-6 px-4 sm:px-6 lg:px-8">
+                                    <nav className="relative flex items-center justify-between sm:h-10 lg:justify-start"
+                                        aria-label="Global">
+                                        <div className="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
+                                            <div className="flex items-center justify-between w-full md:w-auto">
+                                                <a href="!#">
+                                                    <span className="sr-only">Workflow</span>
+                                                    <img
+                                                        alt="Workflow"
+                                                        className="h-8 w-auto sm:h-10"
+                                                        src="./profile-removebg-preview.png"
+                                                    />
+                                                </a>
+                                                <div className="-mr-2 flex items-center md:hidden">
+                                                    <Popover.Button
+                                                        className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                                                        <span className="sr-only">Open main menu</span>
+                                                        <MenuIcon className="h-6 w-6" aria-hidden="true" />
+                                                    </Popover.Button>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div className="hidden md:block md:ml-10 md:pr-4 md:space-x-8">
-                                        {/* {navigation.map((item) => (
+                                        <div className="hidden md:block md:ml-10 md:pr-4 md:space-x-8">
+                                            {/* {navigation.map((item) => (
                                             <span key={item.name} onClick={() => scrollToSection(item.refkey)}
                                                className="font-medium text-gray-500 hover:text-gray-900">
                                                 {item.name}
                                             </span>
                                         ))} */}
-                                         <a onClick={() => scrollToSection(header)}
-                                               className=" cursor-pointer font-medium text-gray-500 hover:text-gray-900">
+                                            <a onClick={() => scrollToSection(header)} href="#!"
+                                                className=" cursor-pointer font-medium text-gray-500 hover:text-gray-900">
                                                 Home
                                             </a>
-                                            <a onClick={() => scrollToSection(about)}
-                                               className="cursor-pointer font-medium text-gray-500 hover:text-gray-900">
+                                            <a onClick={() => scrollToSection(about)} href="#!"
+                                                className="cursor-pointer font-medium text-gray-500 hover:text-gray-900">
                                                 About
                                             </a>
-                                             <a  onClick={() => scrollToSection(skills)}
-                                               className="cursor-pointer font-medium text-gray-500 hover:text-gray-900">
+                                            <a onClick={() => scrollToSection(skills)} href="#!"
+                                                className="cursor-pointer font-medium text-gray-500 hover:text-gray-900">
                                                 Skills
                                             </a>
-                                            <a  onClick={() => scrollToSection(experience)}
-                                               className="cursor-pointer font-medium text-gray-500 hover:text-gray-900">
+                                            <a onClick={() => scrollToSection(experience)} href="#!"
+                                                className="cursor-pointer font-medium text-gray-500 hover:text-gray-900">
                                                 Experience
                                             </a>
-                                            <a  onClick={() => scrollToSection(blogs)}
-                                               className="cursor-pointer font-medium text-gray-500 hover:text-gray-900">
+                                            <a onClick={() => scrollToSection(blogs)} href="#!"
+                                                className="cursor-pointer font-medium text-gray-500 hover:text-gray-900">
                                                 Blogs
                                             </a>
 
-                                    </div>
-                                </nav>
-                            </div>
-
-                            <Transition
-                                as={Fragment}
-                                enter="duration-150 ease-out"
-                                enterFrom="opacity-0 scale-95"
-                                enterTo="opacity-100 scale-100"
-                                leave="duration-100 ease-in"
-                                leaveFrom="opacity-100 scale-100"
-                                leaveTo="opacity-0 scale-95"
-                            >
-                                <Popover.Panel
-                                    focus
-                                    className="absolute z-10 top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
-                                >
-                                    <div
-                                        className="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
-                                        <div className="px-5 pt-4 flex items-center justify-between">
-                                            <div>
-                                                <img
-                                                    className="h-8 w-auto rounded-lg"
-                                                    src="./profile-removebg-preview.png"
-                                                    alt=""
-                                                />
-                                            </div>
-                                            <div className="-mr-2">
-                                                <Popover.Button
-                                                    className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-                                                    <span className="sr-only">Close main menu</span>
-                                                    <XIcon className="h-6 w-6" aria-hidden="true"/>
-                                                </Popover.Button>
-                                            </div>
                                         </div>
-                                        <div className="px-2 pt-2 pb-3 space-y-1">
-                                            {/* {navigation.map((item) => (
+                                    </nav>
+                                </div>
+
+                                <Transition
+                                    as={Fragment}
+                                    enter="duration-150 ease-out"
+                                    enterFrom="opacity-0 scale-95"
+                                    enterTo="opacity-100 scale-100"
+                                    leave="duration-100 ease-in"
+                                    leaveFrom="opacity-100 scale-100"
+                                    leaveTo="opacity-0 scale-95"
+                                >
+                                    <Popover.Panel
+                                        focus
+                                        className="absolute z-10 top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
+                                    >
+                                        <div
+                                            className="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
+                                            <div className="px-5 pt-4 flex items-center justify-between">
+                                                <div>
+                                                    <img
+                                                        className="h-8 w-auto rounded-lg"
+                                                        src="./profile-removebg-preview.png"
+                                                        alt=""
+                                                    />
+                                                </div>
+                                                <div className="-mr-2">
+                                                    <Popover.Button
+                                                        className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                                                        <span className="sr-only">Close main menu</span>
+                                                        <XIcon className="h-6 w-6" aria-hidden="true" />
+                                                    </Popover.Button>
+                                                </div>
+                                            </div>
+                                            <div className="px-2 pt-2 pb-3 space-y-1">
+                                                {/* {navigation.map((item) => (
                                                 <a
                                                     key={item.name}
                                                     href={item.href}
@@ -339,125 +339,125 @@ export default function Example() {
                                                     {item.name}
                                                 </a>
                                             ))} */}
-                                            <a onClick={() => scrollToSection(header)}
-                                              className="cursor-pointer block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">
-                                                Home
+                                                <a onClick={() => scrollToSection(header)} href="#!"
+                                                    className="cursor-pointer block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">
+                                                    Home
+                                                </a>
+                                                <a onClick={() => scrollToSection(about)} href="#!"
+                                                    className=" cursor-pointer block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">
+                                                    About
+                                                </a>
+                                                <a onClick={() => scrollToSection(skills)} href="#!"
+                                                    className="cursor-pointer block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">
+                                                    Skills
+                                                </a>
+                                                <a onClick={() => scrollToSection(experience)} href="#!"
+                                                    className="cursor-pointer block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">
+                                                    Experience
+                                                </a>
+                                                <a onClick={() => scrollToSection(blogs)} href="#!"
+                                                    className="cursor-pointer block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">
+                                                    Blogs
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </Popover.Panel>
+                                </Transition>
+                            </Popover>
+
+                            <main
+                                className="mt-10 mx-auto max-w-9xl px-4  sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+
+
+                                <div className="sm:text-center lg:text-left z-1" >
+                                    <span
+                                        className="ext-4xl tracking-tight font-extrabold text-gray-900 sm:text-2xl md:text-2xl block xl:inline">Hello there, my name is</span>{' '}<br />
+                                    <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+                                        <span className="block xl:inline">Laxman Kashidkar</span>{' '}<br />
+                                        <span
+                                            className="block text-indigo-600 xl:inline sm:text-2xl md:text-2xl">And I am a </span>
+                                        <span
+                                            className="block text-indigo-600 xl:inline sm:text-3xl md:text-4xl"> <ReactTypingEffect
+                                                text={["Developer", "Youtuber", "Blogger"]}
+                                                cursorRenderer={cursor => <h1>{cursor}</h1>}
+                                                speed={100}
+                                                displayTextRenderer={(text, i) => {
+                                                    return (
+                                                        <h1>
+                                                            {text.split('').map((char, i) => {
+                                                                const key = `${i}`;
+                                                                return (
+                                                                    <span
+                                                                        key={key}
+                                                                        style={i % 2 === 0 ? { color: 'magenta' } : {}}
+                                                                    >{char}</span>
+                                                                );
+                                                            })}
+                                                        </h1>
+                                                    );
+                                                }}
+                                            /></span>
+
+                                    </h1>
+                                    <div className="mt-8  ml-2 lg:ml-0 flex justify-center lg:justify-start space-x-6">
+                                        {footerNavigation.social.map((item) => (
+                                            <a key={item.name} href={item.href} target="_blank" rel="noreferrer" className="text-gray-400 hover:text-gray-500">
+                                                <span className="sr-only">{item.name}</span>
+                                                <item.icon className="h-6 w-6" aria-hidden="true" />
                                             </a>
-                                            <a onClick={() => scrollToSection(about)}
-                                              className=" cursor-pointer block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">
-                                                About
+                                        ))}
+                                    </div>
+                                    <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+                                        <div className="rounded-md shadow">
+                                            <a
+                                                href="./laxman_kashidkar_resume.pdf"
+                                                className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10"
+                                            >
+                                                Download CV
                                             </a>
-                                             <a  onClick={() => scrollToSection(skills)}
-                                             className="cursor-pointer block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">
-                                                Skills
-                                            </a>
-                                            <a  onClick={() => scrollToSection(experience)}
-                                      className="cursor-pointer block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">
-                                                Experience
-                                            </a>
-                                            <a  onClick={() => scrollToSection(blogs)}
-                                             className="cursor-pointer block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">
-                                                Blogs
+                                        </div>
+                                        <div className="mt-3 sm:mt-0 sm:ml-3">
+
+                                            <a
+                                                href="mailto:kashidkar37@gmail.com"
+                                                className=" w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10"
+                                            >
+                                                Contact Me
                                             </a>
                                         </div>
                                     </div>
-                                </Popover.Panel>
-                            </Transition>
-                        </Popover>
-
-                        <main
-                            className="mt-10 mx-auto max-w-9xl px-4  sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
-
-
-                            <div className="sm:text-center lg:text-left z-1" >
-                                <span
-                                    className="ext-4xl tracking-tight font-extrabold text-gray-900 sm:text-2xl md:text-2xl block xl:inline">Hello there, my name is</span>{' '}<br/>
-                                <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-                                    <span className="block xl:inline">Laxman Kashidkar</span>{' '}<br/>
-                                    <span
-                                        className="block text-indigo-600 xl:inline sm:text-2xl md:text-2xl">And I am a </span>
-                                    <span
-                                        className="block text-indigo-600 xl:inline sm:text-3xl md:text-4xl"> <ReactTypingEffect
-                                        text={["Developer", "Youtuber", "Blogger"]}
-                                        cursorRenderer={cursor => <h1>{cursor}</h1>}
-                                        speed={100}
-                                        displayTextRenderer={(text, i) => {
-                                            return (
-                                                <h1>
-                                                    {text.split('').map((char, i) => {
-                                                        const key = `${i}`;
-                                                        return (
-                                                            <span
-                                                                key={key}
-                                                                style={i % 2 === 0 ? {color: 'magenta'} : {}}
-                                                            >{char}</span>
-                                                        );
-                                                    })}
-                                                </h1>
-                                            );
-                                        }}
-                                    /></span>
-
-                                </h1>
-                                <div className="mt-8  ml-2 lg:ml-0 flex justify-center lg:justify-start space-x-6">
-          {footerNavigation.social.map((item) => (
-            <a key={item.name} href={item.href} target="_blank" className="text-gray-400 hover:text-gray-500">
-              <span className="sr-only">{item.name}</span>
-              <item.icon className="h-6 w-6" aria-hidden="true" />
-            </a>
-          ))}
-        </div>
-                                <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-                                    <div className="rounded-md shadow">
-                                        <a
-                                           href="./laxman_kashidkar_resume.pdf"
-                                            className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10"
-                                        >
-                                            Download CV
-                                        </a>
-                                    </div>
-                                    <div className="mt-3 sm:mt-0 sm:ml-3">
-
-                                        <a
-                                            href="mailto:kashidkar37@gmail.com"
-                                            className=" w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10"
-                                        >
-                                            Contact Me
-                                        </a>
-                                    </div>
                                 </div>
-                            </div>
-                        </main>
+                            </main>
+                        </div>
+
+                    </div>
+                    <div className="hidden md:block md:ml-10  md:space-x-8 lg:absolute bg-gradient-to-r  from-teal-500 to-cyan-600 lg:inset-y-0 lg:right-0 lg:w-1/2">
+                        <img
+                            className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
+                            src="./profile.png"
+                            alt=""
+                        />
                     </div>
 
                 </div>
-                <div className="hidden md:block md:ml-10  md:space-x-8 lg:absolute bg-gradient-to-r  from-teal-500 to-cyan-600 lg:inset-y-0 lg:right-0 lg:w-1/2">
-                    <img
-                        className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
-                        src="./profile.png"
-                        alt=""
-                    />
-                </div>
 
-            </div>
-
-            <div className="bg-white" ref={about} >
-                <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
-                    <div className="text-center">
-                        <p className="mt-1 text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl">
-                            About me
-                        </p>
-                        <p className="max-w-xl mt-5 mx-auto text-xl text-gray-500">
-                            Who i am?
-                        </p>
+                <div className="bg-white" ref={about} >
+                    <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+                        <div className="text-center">
+                            <p className="mt-1 text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl">
+                                About me
+                            </p>
+                            <p className="max-w-xl mt-5 mx-auto text-xl text-gray-500">
+                                Who i am?
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-                
+
                 <main>
                     {/* Testimonial section */}
-                       <div className="bg-gradient-to-r  from-teal-500 to-cyan-600 pb-16 lg:relative lg:z-10 lg:pb-0">
-            <div className="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-8 lg:px-8">
+                    <div className="bg-gradient-to-r  from-teal-500 to-cyan-600 pb-16 lg:relative lg:z-10 lg:pb-0">
+                        <div className="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-8 lg:px-8">
                             {/*<div className="relative lg:-my-8">*/}
                             {/*    */}
                             {/*    <div className="mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:p-0 sm:h-full">*/}
@@ -472,28 +472,28 @@ export default function Example() {
                             {/*    </div>*/}
                             {/*</div>*/}
                             <div className="relative lg:-my-8">
-                {/*<div aria-hidden="true" className="absolute inset-x-0 top-0 h-1/2 bg-white lg:hidden" />*/}
-                <div className="mx-auto max-w-md  sm:max-w-3xl sm:px-6 lg:h-full lg:p-0 ">
-                  <div className="aspect-w-10 aspect-h-9 lg:aspect-w-10 lg:aspect-h-7 overflow-hidden rounded-xl shadow-xl  lg:aspect-none lg:h-full">
-                    <img
-                      className="object-cover lg:h-full lg:w-full"
-                      src="./profile.png"
-                      alt=""
-                    />
-        {/* <ReactPlayer url='./introvideo.mp4'*/}
-        {/* className='react-player'*/}
-        {/*  width='100%'*/}
-        {/*height='100%'/>*/}
+                                {/*<div aria-hidden="true" className="absolute inset-x-0 top-0 h-1/2 bg-white lg:hidden" />*/}
+                                <div className="mx-auto max-w-md  sm:max-w-3xl sm:px-6 lg:h-full lg:p-0 ">
+                                    <div className="aspect-w-10 aspect-h-9 lg:aspect-w-10 lg:aspect-h-7 overflow-hidden rounded-xl shadow-xl  lg:aspect-none lg:h-full">
+                                        <img
+                                            className="object-cover lg:h-full lg:w-full"
+                                            src="./profile.png"
+                                            alt=""
+                                        />
+                                        {/* <ReactPlayer url='./introvideo.mp4'*/}
+                                        {/* className='react-player'*/}
+                                        {/*  width='100%'*/}
+                                        {/*height='100%'/>*/}
 
-            {/*              <ReactPlayer playing url='/introvideo.mp4'*/}
-            {/*    height='100%'*/}
-            {/*    width='100%'*/}
-            {/*    controls={true}*/}
-            {/*/>*/}
+                                        {/*              <ReactPlayer playing url='/introvideo.mp4'*/}
+                                        {/*    height='100%'*/}
+                                        {/*    width='100%'*/}
+                                        {/*    controls={true}*/}
+                                        {/*/>*/}
 
-                  </div>
-                </div>
-              </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div className="mt-12 lg:m-0 lg:col-span-2 lg:pl-8">
                                 <div
                                     className="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 lg:px-0 lg:py-20 lg:max-w-none">
@@ -506,7 +506,7 @@ export default function Example() {
                                                 aria-hidden="true"
                                             >
                                                 <path
-                                                    d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z"/>
+                                                    d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
                                             </svg>
                                             <p className="mt-6 text-xl font-medium text-white">
                                                 Software Developer talented at translating customer requirements into
@@ -537,7 +537,7 @@ export default function Example() {
 
 
                     {/* Feature section with grid */}
-                    <div ref={skills}  className="relative bg-white py-16 sm:py-24 lg:py-32">
+                    <div ref={skills} className="relative bg-white py-16 sm:py-24 lg:py-32">
                         <div className="mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">
                             <h2 className="text-base font-semibold tracking-wider text-cyan-600 uppercase">Certifications/ Skills</h2>
                             <p className="mt-2 text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl">
@@ -553,15 +553,15 @@ export default function Example() {
                                             <div className="flow-root bg-gray-50 rounded-lg px-6 pb-8">
                                                 <div className="-mt-6">
                                                     <div>
-                            <span
-                                className="inline-flex items-center justify-center p-3 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-md shadow-lg">
-                              {/* <feature.icon className="h-6 w-6 text-white" aria-hidden="true"/> */}
-                              <img
-                                                                        className="h-8 w-8  flex items-center justify-center "
-                                                                        src={feature.imageUrl}
-                                                                        alt=""
-                                                                    />
-                            </span>
+                                                        <span
+                                                            className="inline-flex items-center justify-center p-3 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-md shadow-lg">
+                                                            {/* <feature.icon className="h-6 w-6 text-white" aria-hidden="true"/> */}
+                                                            <img
+                                                                className="h-8 w-8  flex items-center justify-center "
+                                                                src={feature.imageUrl}
+                                                                alt=""
+                                                            />
+                                                        </span>
                                                     </div>
                                                     <h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight">{feature.name}</h3>
                                                     <p className="mt-5 text-base text-gray-500">{feature.description}</p>
@@ -571,12 +571,12 @@ export default function Example() {
                                     ))}
                                 </div>
                             </div>
-                            
+
                         </div>
-                        
+
                     </div>
-{/* CTA Section */}
-                    <div ref={experience}  className="relative bg-gray-900">
+                    {/* CTA Section */}
+                    <div ref={experience} className="relative bg-gray-900">
                         <div className="relative h-56 bg-indigo-600 sm:h-72 md:absolute md:left-0 md:h-full md:w-1/2">
                             <img
                                 className="w-full h-full object-cover"
@@ -597,14 +597,14 @@ export default function Example() {
                                 {/*<p className="mt-2 text-white text-3xl font-extrabold tracking-tight sm:text-4xl">We’re*/}
                                 {/*    here to help</p>*/}
                                 <div className="flow-root">
-                                    <ul role="list" className="-mb-8">
+                                    <ul className="-mb-8">
                                         {activity.map((activityItem, activityItemIdx) => (
                                             <li key={activityItem.id}>
                                                 <div className="relative pb-8">
                                                     {activityItemIdx !== activity.length - 1 ? (
                                                         <span
                                                             className="absolute top-5 left-5 -ml-px h-full w-0.5 bg-gray-200"
-                                                            aria-hidden="true"/>
+                                                            aria-hidden="true" />
                                                     ) : null}
                                                     <div className="relative flex items-start space-x-3">
                                                         {activityItem.type === 'comment' ? (
@@ -621,14 +621,14 @@ export default function Example() {
                                                                     <div className="text-left">
                                                                         <div className="text-sm">
                                                                             <a href={activityItem.person.href}
-                                                                               className="font-medium text-white">
+                                                                                className="font-medium text-white">
                                                                                 {activityItem.person.name}
                                                                             </a>
                                                                         </div>
                                                                         <p className="mt-0.5 text-sm text-gray-500">{activityItem.date}</p>
                                                                     </div>
                                                                     <div className="my-2 text-sm text-white text-left">
-                                                                        <ul role="list " className="-mb-8 list-disc">
+                                                                        <ul className="-mb-8 list-disc">
                                                                             {activityItem.comment.map((com, activityItemIdx) => (
                                                                                 <li>
                                                                                     {com}
@@ -645,19 +645,19 @@ export default function Example() {
                                                                             className="h-8 w-8 bg-gray-100 rounded-full ring-8 ring-white flex items-center justify-center">
                                                                             <UserCircleIcon
                                                                                 className="h-5 w-5 text-gray-500"
-                                                                                aria-hidden="true"/>
+                                                                                aria-hidden="true" />
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                                 <div className="min-w-0 flex-1 py-1.5">
                                                                     <div className="text-sm text-white">
                                                                         <a href={activityItem.person.href}
-                                                                           className="font-medium text-white">
+                                                                            className="font-medium text-white">
                                                                             {activityItem.person.name}
                                                                         </a>{' '}
                                                                         assigned{' '}
                                                                         <a href={activityItem.assigned.href}
-                                                                           className="font-medium text-white">
+                                                                            className="font-medium text-white">
                                                                             {activityItem.assigned.name}
                                                                         </a>{' '}
                                                                         <span
@@ -672,36 +672,36 @@ export default function Example() {
                                                                         <div
                                                                             className="h-8 w-8 bg-gray-100 rounded-full ring-8 ring-white flex items-center justify-center">
                                                                             <TagIcon className="h-5 w-5 text-gray-500"
-                                                                                     aria-hidden="true"/>
+                                                                                aria-hidden="true" />
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                                 <div className="min-w-0 flex-1 py-0">
                                                                     <div className="text-sm leading-8 text-gray-500">
-                        <span className="mr-0.5">
-                          <a href={activityItem.person.href} className="font-medium text-gray-900">
-                            {activityItem.person.name}
-                          </a>{' '}
-                            added tags
-                        </span>{' '}
                                                                         <span className="mr-0.5">
-                          {activityItem.tags.map((tag) => (
-                              <Fragment key={tag.name}>
-                                  <a
-                                      href={tag.href}
-                                      className="relative inline-flex items-center rounded-full border border-gray-300 px-3 py-0.5 text-sm"
-                                  >
-                                <span className="absolute flex-shrink-0 flex items-center justify-center">
-                                  <span
-                                      className={classNames(tag.color, 'h-1.5 w-1.5 rounded-full')}
-                                      aria-hidden="true"
-                                  />
-                                </span>
-                                      <span className="ml-3.5 font-medium text-gray-900">{tag.name}</span>
-                                  </a>{' '}
-                              </Fragment>
-                          ))}
-                        </span>
+                                                                            <a href={activityItem.person.href} className="font-medium text-gray-900">
+                                                                                {activityItem.person.name}
+                                                                            </a>{' '}
+                                                                            added tags
+                                                                        </span>{' '}
+                                                                        <span className="mr-0.5">
+                                                                            {activityItem.tags.map((tag) => (
+                                                                                <Fragment key={tag.name}>
+                                                                                    <a
+                                                                                        href={tag.href}
+                                                                                        className="relative inline-flex items-center rounded-full border border-gray-300 px-3 py-0.5 text-sm"
+                                                                                    >
+                                                                                        <span className="absolute flex-shrink-0 flex items-center justify-center">
+                                                                                            <span
+                                                                                                className={classNames(tag.color, 'h-1.5 w-1.5 rounded-full')}
+                                                                                                aria-hidden="true"
+                                                                                            />
+                                                                                        </span>
+                                                                                        <span className="ml-3.5 font-medium text-gray-900">{tag.name}</span>
+                                                                                    </a>{' '}
+                                                                                </Fragment>
+                                                                            ))}
+                                                                        </span>
                                                                         <span
                                                                             className="whitespace-nowrap">{activityItem.date}</span>
                                                                     </div>
@@ -715,13 +715,13 @@ export default function Example() {
                                     </ul>
                                 </div>
                                 <div className="rounded-md shadow mt-2">
-                                                <a
-                                                    href="./laxman_kashidkar_resume.pdf"
-                                                    className="w-1/2 flex items-center mx-auto justify-center px-3 py-2 mt-9 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-5"
-                                                >
-                                                    Download CV
-                                                </a>
-                                            </div>
+                                    <a
+                                        href="./laxman_kashidkar_resume.pdf"
+                                        className="w-1/2 flex items-center mx-auto justify-center px-3 py-2 mt-9 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-5"
+                                    >
+                                        Download CV
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -748,15 +748,15 @@ export default function Example() {
 
                                     <div key={pos.link} className="flex flex-col rounded-lg shadow-lg overflow-hidden">
                                         <div className="flex-shrink-0">
-                                            <img className="h-48 w-full object-cover" src="https://media.istockphoto.com/id/1449171015/photo/no-face-picture-of-software-engineer-hands-typing-and-composing-app-script-in-front-of-pc.jpg?s=612x612&w=0&k=20&c=zkOe6Fqvx26j5juDOzbUUCZ3HHgQlWojPrrTHMmubV4=" alt="dd"/>
+                                            <img className="h-48 w-full object-cover" src="https://media.istockphoto.com/id/1449171015/photo/no-face-picture-of-software-engineer-hands-typing-and-composing-app-script-in-front-of-pc.jpg?s=612x612&w=0&k=20&c=zkOe6Fqvx26j5juDOzbUUCZ3HHgQlWojPrrTHMmubV4=" alt="dd" />
                                         </div>
                                         <div className="flex-1 bg-white p-6 flex flex-col justify-between">
                                             <div className="flex-1">
-                                        {/*        <p className="text-sm font-medium text-cyan-600">*/}
-                                        {/*            /!*<a href={post.category.href} className="hover:underline">*!/*/}
-                                        {/*            /!*    {post.category.name}*!/*/}
-                                        {/*            /!*</a>*!/*/}
-                                        {/*        </p>*/}
+                                                {/*        <p className="text-sm font-medium text-cyan-600">*/}
+                                                {/*            /!*<a href={post.category.href} className="hover:underline">*!/*/}
+                                                {/*            /!*    {post.category.name}*!/*/}
+                                                {/*            /!*</a>*!/*/}
+                                                {/*        </p>*/}
                                                 <a href={pos.link} className="block mt-2">
                                                     <p className="text-xl font-semibold text-gray-900">{pos.title}</p>
                                                     <div className="mt-3 text-base text-gray-500" > <p dangerouslySetInnerHTML={{ __html: pos.description.split('.')[0] }} ></p></div>
@@ -769,7 +769,7 @@ export default function Example() {
                                                 <div className="flex-shrink-0">
                                                     <a href={pos.author.href}>
                                                         <img className="h-10 w-10 rounded-full"
-                                                             src={avatar} alt={pos.author.name}/>
+                                                            src={avatar} alt={pos.author.name} />
                                                     </a>
                                                 </div>
                                                 <div className="ml-3">
@@ -796,48 +796,45 @@ export default function Example() {
                 </main>
 
                 <footer className="bg-white">
-      <div className="mx-auto max-w-7xl overflow-hidden py-12 px-4 sm:px-6 lg:px-8">
-        <nav className="-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
-
-            <div  className="px-5 py-2 space-x-6">
-            
-
-          <a onClick={() => scrollToSection(header)}
-                                              className="cursor-pointer text-base text-gray-500 hover:text-gray-900">
-                                                Home
-                                            </a>
-                                            <a onClick={() => scrollToSection(about)}
-                                              className="cursor-pointer text-base text-gray-500 hover:text-gray-900">
-                                                About
-                                            </a>
-                                             <a  onClick={() => scrollToSection(skills)}
-                                             className="cursor-pointer text-base text-gray-500 hover:text-gray-900">
-                                                Skills
-                                            </a>
-                                            <a  onClick={() => scrollToSection(experience)}
-                                     className="cursor-pointer text-base text-gray-500 hover:text-gray-900">
-                                                Experience
-                                            </a>
-                                            <a  onClick={() => scrollToSection(blogs)}
-                                              className="cursor-pointer text-base text-gray-500 hover:text-gray-900">
-                                                Blogs
-                                            </a>
-                                            </div>
-        </nav>
-        <div className="mt-8 flex justify-center space-x-6">
-          {footerNavigation.social.map((item) => (
-            <a key={item.name} href={item.href} target="_blank"  className="text-gray-400 hover:text-gray-500">
-              <span className="sr-only">{item.name}</span>
-              <item.icon className="h-6 w-6" aria-hidden="true" />
-            </a>
-          ))}
-        </div>
-        <div className="mt-8 flex justify-center  text-center text-base text-gray-400">&copy; 2022 Your Laxman. All rights reserved. Made With <svg xmlns="http://www.w3.org/2000/svg" fill="red" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
-</svg>
-</div>
-      </div>
-    </footer>
+                    <div className="mx-auto max-w-7xl overflow-hidden py-12 px-4 sm:px-6 lg:px-8">
+                        <nav className="-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
+                            <div className="px-5 py-2 space-x-6">
+                                <a onClick={() => scrollToSection(header)} href='#!'
+                                    className="cursor-pointer text-base text-gray-500 hover:text-gray-900">
+                                    Home
+                                </a>
+                                <a onClick={() => scrollToSection(about)} href='#!'
+                                    className="cursor-pointer text-base text-gray-500 hover:text-gray-900">
+                                    About
+                                </a>
+                                <a onClick={() => scrollToSection(skills)} href='#!'
+                                    className="cursor-pointer text-base text-gray-500 hover:text-gray-900">
+                                    Skills
+                                </a>
+                                <a onClick={() => scrollToSection(experience)} href='#!'
+                                    className="cursor-pointer text-base text-gray-500 hover:text-gray-900">
+                                    Experience
+                                </a>
+                                <a onClick={() => scrollToSection(blogs)} href='#!'
+                                    className="cursor-pointer text-base text-gray-500 hover:text-gray-900">
+                                    Blogs
+                                </a>
+                            </div>
+                        </nav>
+                        <div className="mt-8 flex justify-center space-x-6">
+                            {footerNavigation.social.map((item) => (
+                                <a key={item.name} href={item.href} target="_blank" rel="noreferrer" className="text-gray-400 hover:text-gray-500">
+                                    <span className="sr-only">{item.name}</span>
+                                    <item.icon className="h-6 w-6" aria-hidden="true" />
+                                </a>
+                            ))}
+                        </div>
+                        <div className="mt-8 flex justify-center  text-center text-base text-gray-400">&copy; 2022 Your Laxman. All rights reserved. Made With <svg xmlns="http://www.w3.org/2000/svg" fill="red" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                        </svg>
+                        </div>
+                    </div>
+                </footer>
             </div>
         </div>
     )
