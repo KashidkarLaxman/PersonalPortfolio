@@ -229,9 +229,10 @@ export default function Example() {
         <div className="bg-white scroll-smooth ">
             <div className="relative overflow-hidden">
                 <div className="relative bg-white overflow-hidden" ref={header}>
-                    <div className="max-w-9xl mx-auto bg-white ">
+                    <div className="max-w-10xl mx-auto bg-white ">
                         <div
                             className="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 xl:max-w-4xl  lg:max-w-2xl lg:w-full lg:pb-28 ">
+
 
                             <svg
                                 className="hidden lg:block absolute right-0 inset-y-0 h-full w-48 text-white transform translate-x-1/2"
@@ -314,13 +315,13 @@ export default function Example() {
                                         <div
                                             className="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
                                             <div className="px-5 pt-4 flex items-center justify-between">
-                                                <div>
+                                                {/* <div>
                                                     <img
                                                         className="h-8 w-auto rounded-lg"
                                                         src="./profile-removebg-preview.png"
                                                         alt=""
                                                     />
-                                                </div>
+                                                </div> */}
                                                 <div className="-mr-2">
                                                     <Popover.Button
                                                         className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
@@ -431,10 +432,10 @@ export default function Example() {
                         </div>
 
                     </div>
-                    <div className="hidden md:block md:ml-10  md:space-x-8 lg:absolute bg-gradient-to-r  from-teal-500 to-cyan-600 lg:inset-y-0 lg:right-0 lg:w-1/2">
+                    <div className="hidden md:block lg:absolute bg-gradient-to-r  from-teal-500 to-cyan-600 lg:inset-y-0 lg:right-0 lg:w-1/2">
                         <img
                             className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
-                            src="./profile.png"
+                            src="./WhatsApp2.jpeg"
                             alt=""
                         />
                     </div>
@@ -477,7 +478,7 @@ export default function Example() {
                                     <div className="aspect-w-10 aspect-h-9 lg:aspect-w-10 lg:aspect-h-7 overflow-hidden rounded-xl shadow-xl  lg:aspect-none lg:h-full">
                                         <img
                                             className="object-cover lg:h-full lg:w-full"
-                                            src="./profile.png"
+                                            src="./WhatsApp1.jpeg"
                                             alt=""
                                         />
                                         {/* <ReactPlayer url='./introvideo.mp4'*/}
@@ -522,8 +523,8 @@ export default function Example() {
                                         </div>
                                         <footer className="mt-6">
                                             <p className="text-base font-medium text-white">Laxman Kashidkar</p>
-                                            <p className="text-base font-medium text-cyan-100">Solutions developer at
-                                                Incentius</p>
+                                            <p className="text-base font-medium text-cyan-100">Fullstack developer at
+                                                Zinrelo</p>
                                         </footer>
                                     </blockquote>
                                 </div>
