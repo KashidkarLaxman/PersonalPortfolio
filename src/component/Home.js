@@ -280,7 +280,7 @@ function About() {
             <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-5 lg:px-8">
                 <Reveal className="lg:col-span-2">
                     <TiltCard max={14} className="portrait mx-auto max-w-sm rounded-3xl p-2">
-                        <img src="/WhatsApp1.jpeg" alt="Laxman Kashidkar" className="aspect-square w-full rounded-[1.25rem] object-cover" />
+                        <img src={`${process.env.PUBLIC_URL}/WhatsApp1.jpeg`} alt="Laxman Kashidkar" className="aspect-square w-full rounded-[1.25rem] object-cover" />
                         <div className="portrait-badge">
                             <p className="font-display text-2xl font-bold text-white">6+ yrs</p>
                             <p className="text-xs text-slate-300">Python · AI · Data</p>

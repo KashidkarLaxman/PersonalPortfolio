@@ -6,7 +6,7 @@ export const profile = {
     company: 'CitiusTech',
     location: 'Pune, Maharashtra',
     email: 'kashidkar37@gmail.com',
-    resume: '/laxman_kashidkar_resume.pdf',
+    resume: `${process.env.PUBLIC_URL}/laxman_kashidkar_resume.pdf`,
     headline: 'Full Stack Python Engineer building GenAI systems & data platforms',
     rotating: [
         'Python · FastAPI · React',
